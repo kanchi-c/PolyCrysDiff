@@ -1,0 +1,38 @@
+dataset_params:
+  im_path: 'data/var_grain'
+  im_channels: 3
+  im_size: 64
+  name: 'poly'
+
+autoencoder_params:
+  z_channels: 3
+  down_channels: [32, 64, 128]
+  mid_channels: [128, 128]
+  down_sample: [true, true]
+  attn_down: [false, false]
+  norm_channels: 32
+  num_heads: 16
+  num_down_layers: 1
+  num_mid_layers: 1
+  num_up_layers: 1
+
+train_params:
+  seed: 1111
+  debug: false
+  task_name: 'out/vae_var_grain'
+
+  autoencoder_batch_size: 2
+  autoencoder_epochs: 500
+  autoencoder_lr: 0.0001
+  autoencoder_acc_steps: 2
+  autoencoder_ckpt_save_epochs: 100
+
+  # KL is averaged over batch, channel, and spatial dimensions before weighting.
+  kl_reduction: 'mean'
+  kl_weight: 0.001
+  kl_warmup_epochs: 50
+
+  # Kept for compatibility with the existing training script/config structure.
+  disc_start: 0
+  vae_autoencoder_ckpt_name: 'vae_prior_ckpt'
+  vae_ckpt_epoch: 0

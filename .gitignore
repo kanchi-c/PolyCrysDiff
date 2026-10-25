@@ -1,0 +1,38 @@
+# Local workspaces and caches
+.codex_work/
+.claude/
+.idea/
+.vscode/
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+
+# Research data, results, figures, and model weights are distributed separately
+data/
+old/
+out/
+figs/
+docs/
+calculation/
+models/weights/
+*.npy
+*.npz
+*.pth
+*.pt
+*.ckpt
+*.pkl
+*.zip
+*.mat
+*.vtu
+*.vtk
+*.msh
+*.e
+*.csv
+*.log
+
+# System files
+Thumbs.db
+.DS_Store
